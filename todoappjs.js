@@ -60,6 +60,8 @@ var obj={
     id:card.id,
     flag:0,
     name:text,
+    height:40,
+    subtask_count:0,
 }
 id_count.push(obj);
 
@@ -266,6 +268,19 @@ function subtask(id){
     j++;
     k++;
     btn.setAttribute(`onclick`,`createitems()`);
+    for(var i=0;i<id_count.length;i++){
+        if(id_count[i].id==id.id){
+            
+            id_count[i].subtask_count=id_count[i].subtask_count+1;
+            if(id_count[i].subtask_count>=6){
+                var h=id_count[i].height;
+                h=h+3;
+                id.style.height=`${h}vh`;
+                id_count[i].height=h;
+            }
+        }
+    }
+
    
    
    
