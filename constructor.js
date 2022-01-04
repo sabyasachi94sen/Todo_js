@@ -4,15 +4,24 @@ var k=1;
 var count=0;
 var flag=0;
 
-var h=40;
+var id_count=[];
 
-function add(){
+function add1(){
     var box=document.querySelector(".modals");
     box.style.display="block";
     console.log(box);
    $('.main-container').addClass('filters').addClass('pointers');
    
 }
+function add2(){
+    document.getElementById("btn").setAttribute(`onclick`,`createitems(${1})`);
+    var box=document.querySelector(".modals");
+    box.style.display="block";
+    console.log(box);
+   $('.main-container').addClass('filters').addClass('pointers');
+
+}
+
 
 function closeitems(){
     var close=document.querySelector("#cross");
@@ -23,7 +32,7 @@ function closeitems(){
 
 
 
-function createitems(){
+function createitems(flag){
 
     var no_items=document.querySelector(".no-items");
     no_items.style.display="none";
@@ -32,25 +41,33 @@ function createitems(){
     box.style.display="none";
 
     var text=document.getElementsByTagName("input")[0].value;
-   count++;
+ 
     
 
 
 var card_container=document.getElementById("card-container-id");
 var card=document.createElement("div");
-
-
-var p=document.createElement("p");
-p.innerHTML=text;
-
-
-
-
-
-
-card.appendChild(p);
 card.className="card";
 card.id=`Card${i}`;
+var temp=card.id;
+var p=document.createElement("p");
+p.innerHTML=text;
+p.className="card-title";
+p.setAttribute(`onclick`,`title_click(${card.id})`);
+card.appendChild(p);
+
+var obj={
+    id:card.id,
+    flag:0,
+    name:text,
+}
+id_count.push(obj);
+
+obj={};
+
+
+
+
 
 
 card_container.appendChild(card);
@@ -88,36 +105,104 @@ delete_card.setAttribute(`onclick`,`deletes(${parent_id})`);
 var sub_tasks=document.querySelector(`#b${i}`);
 sub_tasks.setAttribute(`onclick`,`sub_task_box(${parent_id})`);
 var temp=card;
+count++;
+if(flag==1)
+back();
 
 
 
 
 i++;
-console.log
-
-
-
-
-
-
-
-
-     
-   
-
-
-
-
-
 }
 
-function deletes(id){
-    console.log(id);
-  id.style.display="none";
+function title_click(ids){
+   
+    var span1=document.createElement("span");
+    span1.innerHTML="<i class='fas fa-chevron-circle-left' style='cursor:pointer' id='halu'></i>";
+    span1.id="arrow-id";
+    span1.setAttribute(`onclick`,`back()`)
+    var temp=document.getElementById("tasklist");
+    document.getElementById("task-span").style.display="none";
+    document.getElementById("list-span").style.display="none";
+    var tasklist=document.getElementById("task-id");
+       var temp_id=document.getElementById(ids.id);
+    var span2=document.createElement("span");
+    for(var j=0;j<id_count.length;j++){
+     
+     var card_temp_id=document.getElementById(id_count[j].id);
+    if((card_temp_id==temp_id && id_count[j].flag==0)){
+       tasklist.appendChild(span1);
+    span2.innerHTML="BACK";
+    span2.id="back-id";
+   id_count[j].flag=1;
+   console.log(id_count);
+   tasklist.appendChild(span2);
+    }
+}
+    var original_id=document.getElementById(ids.id);
+
+
+
+
+    for(var i=0;i<id_count.length;i++){
+       var card_id=document.getElementById(id_count[i].id);
+       
+        
+       if(card_id==original_id)
+       {
+           card_id.style.margin="auto";
+           document.getElementById("title-id").innerHTML=id_count[i].name;
+           continue;
+       }
+       else{
+           card_id.style.display="none";
+       }
+   }
+   document.getElementById("click-id").setAttribute("onclick","add2()");
+
+
+    
+}
+
+
+function back(){
+    document.getElementById("arrow-id").remove();
+    document.getElementById("back-id").remove();
+   document.getElementById("task-span").style.display="inline";
+   document.getElementById("list-span").style.display="inline";
+
+   for(var i=0;i<id_count.length;i++){
+       id_count[i].flag=0;
+       var x=id_count[i].id;
+       var temp=document.getElementById(x);
+       temp.style.display="block";
+      $(temp).css("margin","");
+      
+   
+   }
+
+   document.getElementById("btn").setAttribute(`onclick`,`createitems(${0})`);
+   document.getElementById("click-id").setAttribute("onclick","add1()");
+   document.getElementById("title-id").innerHTML="";
+  
+   
+ 
+}
+
+function deletes(ids){
+    
+  console.log(id_count);
+  ids.style.display="none";
   var no_items=document.querySelector(".no-items");
   count--;
   if(count==0)
   no_items.style.display="block";
+  for(var i=0;i<id_count.length;i++){
+      if(id_count[i].id==ids.id)
+      id_count.splice(i,1);
+  }
+  console.log(id_count);
+ 
 
 }
 
@@ -201,10 +286,9 @@ console.log(x);
 var y=arr.reduce((sum,n)=>sum+n,0);
 console.log(y);
 
-var abc=function(){
-    window.location.hash="reload";
-}
-window.onload=abc();
+
+
+
 
 
 

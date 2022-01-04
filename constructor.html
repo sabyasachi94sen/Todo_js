@@ -28,7 +28,8 @@
            
             <input type="text" placeholder="Task Name">
                <div class="button-wrapper">
-                  <button onclick="createitems()" id="btn">Add</button>
+                  <button onclick="createitems(0)" id="btn">Add</button>
+                 
                   <button onclick="closeitems()">Close</button>
                   
                </div>
@@ -41,13 +42,15 @@
 
         <div class="main-container">
         <div class="wrapper">
-            <div class="tasklist">
-                <span>Tasks</span>
-                <span>Lists</span>
+            <div class="tasklist" id="task-id">
+                <span id="task-span">Tasks</span>
+                
+                <span id="list-span">Lists</span>
             </div>
+            <p class="title" id="title-id"></p>
 
             <div class="add-items">
-                <i style="font-size: 1.5rem; cursor:pointer; color: blue;" class="fas fa-plus-circle" onclick="add()"></i>
+                <i style="font-size: 1.5rem; cursor:pointer; color: blue;" class="fas fa-plus-circle" onclick="add1()" id="click-id"></i>
                 <span class="item">Add item</span>
             </div>
 

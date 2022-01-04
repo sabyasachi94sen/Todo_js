@@ -197,7 +197,7 @@ h2{
     right:2rem;
   
 }
-p{
+.card-title{
     color:orange;
     position: relative;
     top:0.5rem;
@@ -308,6 +308,16 @@ a{
     position: relative;
     top:3rem;
 }
+.title{
+    width:20%;
+    height:7vh;
+ 
+    text-align: center;
+    font-size: 2rem;
+    color:white;
+    font-family: sans-serif;
+ 
+}
 
 @media (max-width:800px){
     .main-container{
@@ -324,6 +334,10 @@ a{
     .wrapper{
         width:100%;
         height:7vh;
+   
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
 
    
         font-size: 1.5rem;
@@ -351,13 +365,16 @@ a{
     display: flex;
     position: relative;
     width:36vw;
+    top:0.5rem;
+    left:0.2rem;
   
     
   
 }
 .tasklist span:nth-child(2){
     position: relative;
-    left:0.1rem
+    left:0.05rem;
+   
 }
 
 hr{
@@ -365,9 +382,10 @@ hr{
 }
 .add-items{
     position: relative;
-    right:0;
+    right:-1rem;
     font-size: 5px;
     width:40%;
+    top:0.8rem;
 
 }
 .add-items span{
@@ -382,5 +400,22 @@ hr{
     width:7rem;
     height:4vh;
     margin: auto;
+}
+.title{
+    width:40%;
+    height:5vh;
+    
+    position: relative;
+    
+    text-align: center;
+    font-size: 2rem;
+    color:white;
+    font-family: sans-serif;
+    top:0.5rem;
+   
+
+}
+.title{
+    font-size: 1.5rem;
 }
 }
