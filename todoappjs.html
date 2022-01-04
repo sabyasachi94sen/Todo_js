@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./todoappjs.css">
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+        <script src="./todoappjs.js" async defer></script>
+       <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+ 
+      
+        <div class="modals" id="cross">
+            <span>Add New List</span>
+           
+            <input type="text" placeholder="Task Name">
+               <div class="button-wrapper">
+                  <button onclick="createitems(0)" id="btn">Add</button>
+                 
+                  <button onclick="closeitems()">Close</button>
+                  
+               </div>
+
+        </div>
+
+        
+       
+
+
+        <div class="main-container">
+        <div class="wrapper">
+            <div class="tasklist" id="task-id">
+                <span id="task-span">Tasks</span>
+                
+                <span id="list-span">Lists</span>
+            </div>
+            <p class="title" id="title-id"></p>
+
+            <div class="add-items">
+                <i style="font-size: 1.5rem; cursor:pointer; color: blue;" class="fas fa-plus-circle" onclick="add1()" id="click-id"></i>
+                <span class="item">Add item</span>
+            </div>
+
+           
+        
+        
+        
+        </div>
+        <div class="no-items">
+            <h3>No items Added</h3>
+            
+        </div>
+        
+        
+
+      
+            <div class="card-container" id="card-container-id">
+            
+
+            </div>
+
+            
+
+
+            </div>
+        
+
+      
+
+            
+            
+      
+
+           
+   
+
+      
+
+
+       
+    </body>
+</html>
