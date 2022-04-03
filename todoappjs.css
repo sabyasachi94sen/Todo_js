@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
 }
+.extra-div{
+    width:100%;
+    height:15px;
+    /* background-color: orange; */
+    margin-top: 3vh;
+}
 
 .main-container{
     background-color: black;
@@ -27,16 +33,18 @@
    text-align: center;
    flex-wrap: wrap;
    display: inline-block;
+   position: relative;
     
 }
 
 
 hr{
-    width:12rem;
+    width:100%;
     height:1px;
     background-color: grey;
     position: relative;
     top:1rem;
+    margin-bottom: 3vh;
 }
 .wrapper{
     width:80%;
@@ -77,9 +85,9 @@ hr{
 }
 
 .tasklist{
-    width:10vw;
+    width:15vw;
     height:6vh;
- 
+    /* background-color: red; */
     font-size:1.5rem;
     font-family: sans-serif;
     color:white;
@@ -135,7 +143,7 @@ h2{
     border-radius: 5px;
 }
 .button-wrapper{
-    width:70%;
+    width:100%;
     height:7vh;
     
    
@@ -177,24 +185,27 @@ h2{
 
 }
 .sub-item{
-    width:2.5rem;
-    height:1.5rem;
-  
-    position:absolute;
-    bottom:0;
+    width:1.5rem;
+    height:auto;
+    /* background-color: green; */
+    position: absolute;
     right:0;
+    bottom: 0;
+    
+    
   
    
   
 
 }
 .pluses{
-    width:2.5rem;
-    height:1.5rem;
+    width:1.5rem;
+    height:auto;
     
-    position:absolute;
+    position: absolute;
     bottom:0;
     right:2rem;
+    /* background-color: red; */
   
 }
 .card-title{
@@ -204,6 +215,7 @@ h2{
     font-family: sans-serif;
     width:100%;
     cursor: pointer;
+    /* background-color: yellow; */
 
     
   
@@ -224,18 +236,20 @@ a{
 }
 .task{
     width:10rem;
-    height:4vh;
+    height:auto;
     
    display: flex;
    justify-content: space-evenly;
    align-items: center;  
    position: relative;
    
-    top:5vh;
+  
     margin: auto;
     font-family: sans-serif;
     font-size: 14px;
     font-weight: 100;
+    /* background-color: red; */
+    margin-top:0;
     
   
 }
@@ -247,12 +261,13 @@ a{
     font-size:8px;
     border-radius: 20px;
     cursor:pointer;
+  
 }
 .no-items{
     width:20%;
     height:6vh;
     
-    margin-left:9rem;
+    margin-left:10vw;
    
   
 }
@@ -319,7 +334,7 @@ a{
  
 }
 
-@media (max-width:800px){
+@media (max-width:1100px) and (orientation:portrait){
     .main-container{
         width:100%;
         position: relative;
@@ -355,7 +370,7 @@ a{
     width:20%;
     height:6vh;
     
-    margin-left:4rem;
+    margin-left:8vw;
     margin-top: 2rem;
    
   
@@ -366,7 +381,8 @@ a{
     position: relative;
     width:36vw;
     top:0.5rem;
-    left:0.2rem;
+    left:7vw;
+    /* background-color: green; */
   
     
   
@@ -398,8 +414,15 @@ hr{
 
 .task{
     width:7rem;
-    height:4vh;
+    height:auto;
     margin: auto;
+    /* background-color: green; */
+    margin-top: 0;
+    clear:left;
+}
+.b1{
+    height: auto;
+    /* background-color: yellow; */
 }
 .title{
     width:40%;
@@ -413,6 +436,146 @@ hr{
     font-family: sans-serif;
     top:0.5rem;
    
+
+}
+.title{
+    font-size: 1.5rem;
+}
+}
+
+
+@media (max-width:1100px) and (orientation:landscape){
+    .main-container{
+        width:100%;
+        position: relative;
+    }
+    
+    .modals{
+        width:50%;
+        height:40vh;
+        transform: translate(25vw,-30vh);
+        line-height: 8vh;
+    }
+
+    .wrapper{
+        width:100%;
+        height:14vh;
+        /* background-color: yellow; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        
+        font-size: 1.5rem;
+}
+#btn,#btn1{
+    height:10vh;
+    width:45%;
+}
+.button-wrapper{
+    height:10vh;
+    /* background-color: green; */
+    margin-top: 5vh;
+}
+#ip{
+    height: 6vh;
+ 
+    /* background-color: green; */
+}
+    .card{
+   width:40%;
+  height:80vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:10vh;
+  
+ 
+   }
+
+   .no-items{
+    width:20%;
+    height:6vh;
+    
+    margin-left:7vw;
+    margin-top: 2rem;
+   
+  
+}
+
+.tasklist{
+    display: flex;
+    position: relative;
+    width:36vw;
+
+    left:6vw;
+    height:auto;
+    /* background-color: green; */
+  
+    
+  
+}
+.tasklist span:nth-child(2){
+    position: relative;
+    left:0.05rem;
+   
+}
+
+
+
+hr{
+    width:100%;
+}
+.add-items{
+    position: relative;
+    right:-1rem;
+    font-size: 5px;
+    width:40%;
+   
+    height:auto;
+    /* background-color: red; */
+
+}
+.add-items span{
+  font-size: 1.2rem;
+}
+.add-items span:nth-child(2){
+    position: relative;
+    left:0.1rem;
+}
+
+.task{
+    width:7rem;
+    height:auto;
+    margin: auto;
+    margin-top: 4vh;
+    /* background-color: yellow; */
+}
+.b1{
+    height:auto;
+    
+
+}
+
+.title{
+    width:40%;
+    height:5vh;
+    
+    position: relative;
+    
+    text-align: center;
+    font-size: 2rem;
+    color:white;
+    font-family: sans-serif;
+    top:0.5rem;
+   
+
+}
+.extra-div{
+  margin-top: 4vh;
+}
+hr{
+    margin-bottom: 6vh;
+}
 
 }
 .title{

@@ -61,11 +61,11 @@ var obj={
     flag:0,
     name:text,
     height:40,
+    icon_h:0,
     subtask_count:0,
+    substask:{}
 }
-id_count.push(obj);
 
-obj={};
 
 
 
@@ -94,7 +94,13 @@ plus.innerHTML='<i class="fas fa-plus-circle"></i>';
 plus.className="pluses";
 card.appendChild(plus);
 trash.firstChild.id=`c${i}`;
+
+obj.substask.deletes=trash;
+
 plus.firstChild.id=`b${i}`;
+
+obj.substask.adds=plus;
+
 var trash_child=trash.firstChild;
 trash_child.style.cursor="pointer";
 trash_child.style.color="orange";
@@ -111,7 +117,10 @@ count++;
 if(flag==1)
 back();
 
+id_count.push(obj);
 
+obj={};
+console.log(id_count)
 
 
 i++;
@@ -253,6 +262,9 @@ function subtask(id){
 
     id.appendChild(task_container);
      task_container.appendChild(spans);
+     var x=document.createElement("div");
+     x.className="extra-div";
+     id.appendChild(x);
   
     task_container.appendChild(b1);
     $(b1).click(function(){
@@ -272,11 +284,15 @@ function subtask(id){
         if(id_count[i].id==id.id){
             
             id_count[i].subtask_count=id_count[i].subtask_count+1;
-            if(id_count[i].subtask_count>=6){
-                var h=id_count[i].height;
-                h=h+3;
-                id.style.height=`${h}vh`;
-                id_count[i].height=h;
+            if(id_count[i].subtask_count>=5){
+               
+                id.style.height=`auto`;
+                id_count[i].height="auto";
+               
+              
+               
+               
+                
             }
         }
     }
